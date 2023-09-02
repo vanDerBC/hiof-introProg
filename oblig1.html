@@ -40,26 +40,41 @@
         Kommenter hver feil du finner! 
     -->
     <script>
-        //
-        const examtype = "error
-        const studenttype: "hero";
+        //syntaxError- mangeler hermetegn etter error
+        const examtype = "error"
+
+        //syntaxError- endret ":" til "=" for anngi variablen på riktig måte
+        const studenttype = "hero";
 
         const maxScore = 1337;
-        const currentScore = 330;
+        //typeError- endre type variablen fra "const" til "let" fordi variablen skal kunne endres senere
+        let currentScore = 330;
 
-        const addedScore == currentScore * 4:
-        const missingMaxScore = "17";
-        currentScore = addedcore + missingMaxScore;
+        //syntaxError- fjernet et "=", så det bare er 1 istedenfor 2
+        //syntaxError- endret dra ":" til ";" for å sluttgjøre kommandoen
+        const addedScore = currentScore * 4;
+        //logicalError- gjorde "17" fra en tekststreng til et tall
+        const missingMaxScore = 17;
+        //referenceError- addedScore var skrevet feil, så det ble til en ikke definert variabel
+        currentScore = addedScore + missingMaxScore;
 
         const green = "0, 128, 0";
 
+        //deklarerte successImage før if settingen for å gjøre den tilgjenglig senere i koden
+        let successImage
         if (maxScore == 1337) {
-            const successImage = `${examtype}-{studenttype}`
+            //la til "$" for {studenttype} for referere til variabelen "studenttype" tidligere i koden 
+            successImage = `${examtype}-${studenttype}`
         }
 
-        if (currentScore ==== maxScore) [
-            document.getElementByIDE("background").style.backgroundImage = "url(" + successImage + ".jpg)"
-            document.getElementById("mainframe"),style.backgroundColor = "rgb(" + greeen + ")"
+        //syntaxError- endret fra 4 "=" til 3 "=" for å skille mellom tekststreng og tall
+        //syntaxError- endret fra "[" til "{" for starte scope
+        if (currentScore === maxScore) {
+            //syntaxError- rettet opp skrivefeil fra "getElementByIDE" til "getElementById"
+            document.getElementById("background").style.backgroundImage = "url(" + successImage + ".jpg)"
+            //syntaxError- endret "green" fra en udefinert variabel til en definert variabel med å fjerne en "e"
+            //skrivefeil- endret et fra "," til et "." for stle
+            document.getElementById("mainframe").style.backgroundColor = "rgb(" + green + ")"
         }
     </script>
 </body>
